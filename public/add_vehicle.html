@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sim Racing</title>
+    <link rel="stylesheet" href="./css/add_vehicle_menu.css">
+    <script src="https://kit.fontawesome.com/cf7f18f3e6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <!-- MAIN TITLE -->
+
+
+    <div class="title_container">
+        <div class="back_button">
+            <a href="/"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <h1 class="title">Add vehicle</h1>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+
+
+    <div class="content_container">
+
+
+        <!-- NEW ITEM FORM -->
+
+
+        <div class="main_content">
+            <form action="/vehicles" method="post" class="new_vehicle_input">
+                <h3 class="subtitle">Enter new vehicle: </h3>
+
+                <label for="name_input">Name: </label>
+                <input type="text" name="name" id="name_input" autocomplete="off">
+
+                <label for="type_input">Type: </label>
+                <select name="vehicleType" id="type_input">
+                    <option value="n/a">-- Select a type --</option>
+                    <option value="sports_car">Car (sports)</option>
+                    <option value="terrain_car">Car (terrain)</option>
+                    <option value="cross_bike">Bike (cross)</option>
+                    <option value="sports_bike">Bike (Sport)</option>
+                    <option value="truck">Truck</option>
+                </select>
+
+                <div class="extra_info_container">
+                    <p class="extra_info" id="speedInfo">Max speed: </p>
+                    <p class="extra_info" id="malfunctionChanceInfo">Malfunction chance: </p>
+                </div>
+
+                <button type="submit">
+                    <p class="btn_text">Create</p>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const propertiesMap = new Map();
+        propertiesMap.set('sports_car', { maxSpeed: 140, malfunctionChance: 12 });
+        propertiesMap.set('terrain_car', { maxSpeed: 100, malfunctionChance: 3 });
+        propertiesMap.set('cross_bike', { maxSpeed: 85, malfunctionChance: 3 });
+        propertiesMap.set('sports_bike', { maxSpeed: 130, malfunctionChance: 18 });
+        propertiesMap.set('truck', { maxSpeed: 80, malfunctionChance: 6 });
+
+        const form = document.getElementById('type_input');
+        form.addEventListener('change', el => {
+            const info = propertiesMap.get(form.value);
+
+            document.getElementById('speedInfo').innerText = `Max Speed: ${info.maxSpeed}km/h`;
+            document.getElementById('malfunctionChanceInfo').innerText = `Malfunction chance: ${info.malfunctionChance}%`;
+        });
+    </script>
+</body>
+</html>

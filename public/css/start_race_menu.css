@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --cyan: #038C8C;
+    --yellow: #F2B138;
+    --beige: #F2C6A0;
+    --orange: #F28157;
+    ---red: #F25A38;
+    --road-light: #7F8C8D;
+    --road-dark: #2C3E50;
+    --font: 'Roboto', sans-serif;
+    --font_title: 'Permanent Marker', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle, var(--beige), var(---red), var(---red), var(---red));
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    width: 50%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.back_button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_button a i {
+    color: var(--yellow);
+    font-size: 1.5em;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+.back_button a i:hover {
+    transform: translateY(5px);
+}
+
+.title {
+    font-family: var(--font_title);
+    font-size: 3em;
+    color: var(--yellow);
+    padding-left: 30px;
+}
+
+.title::before {
+    content: 'Start race!';
+    color: var(--road-dark);
+    font-size: 1em;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    z-index: -1;
+}
+
+/** SUBTITLE **/
+
+.subtitle {
+    font-size: 1.3em;
+    font-family: var(--font);
+    font-weight: 900;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/** CARDS **/
+
+.content_container { 
+    padding: 20px;
+}
+
+.cards_container {
+    width: 70%;
+    margin: 20px 0;
+    padding: 5px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+    width: 15px;
+    background: var(---red)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card {
+    width: 200px;
+    height: 270px;
+    background: var(--yellow);
+    margin: 0 10px 10px 10px;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 1px 1px var(--road-dark);
+}
+
+.card .top_container {
+    background: var(--cyan);
+    height: 40%;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card .top_container .name {
+    height: 30px;
+    font-family: var(--font_title);
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: var(--beige);
+    position: relative;
+}
+
+.card .top_container .name::before {
+    content: '';
+    width: 50%;
+    height: 1px;
+    background: var(--beige);
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+.card .top_container .icon_container {
+    height: calc(100% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .top_container .icon_container i {
+    font-size: 2em;
+    color: var(--beige);
+}
+
+.card .info_container {
+    height: 60%;
+    width: 100%;
+    padding: calc(60% / 4) 10px;
+}
+
+.card .info_container td {
+    height: 5px;
+    font-family: var(--font);
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--road-dark);
+    text-transform: uppercase;
+}
+
+.card_selected {
+    box-shadow: none;
+    border: 2px solid var(--beige);
+}
+
+.card_selected:hover {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.special_card {
+    background: var(--yellow);
+    
+}
+
+.special_card .top_container {
+    background: #F2F2F2;
+}
+
+.special_card .name {
+    background: linear-gradient(90deg, var(--yellow), var(--yellow), transparent);
+    width: 115%;
+    padding-left: 10px; 
+    transform: translateX(-20px);
+    border-top-left-radius: 10px;
+    position: relative;
+}
+
+.special_card .top_container .name {
+    color: #F2F2F2;
+}
+
+.special_card .name::after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    background: var(--road-dark);
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.special_card .top_container .icon_container i,
+.special_card .top_container .trash_icon {
+    color: var(--yellow);
+}
+
+.special_card .info_container td {
+    color: #F2F2F2;
+}
+
+#add_vehicle_card {
+    background: transparent;
+    border: 5px dotted var(--beige);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: none;
+}
+
+#add_vehicle_card:hover {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#add_vehicle_card .add_icon_container {
+    width: 55px;
+    height: 55px;
+    border: 5px dotted var(--beige);
+    border-radius: 50%;
+    margin-top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add_vehicle_card .add_icon_container a {
+    color: var(--beige);
+}
+
+#add_vehicle_card .add_text {
+    font-family: var(--font);
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--beige);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
+/** RACE BUTTON **/
+
+
+.race_btn {
+    padding: 15px 30px;
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    border: none;
+    border-radius: 40px;
+    background: var(--yellow);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.race_btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 1px 1px var(--road-dark);
+}
+
+.race_btn p {
+    font-family: var(--font_title);
+    font-size: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: var(--cyan);
+}

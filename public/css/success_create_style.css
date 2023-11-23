@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --cyan: #038C8C;
+    --yellow: #F2B138;
+    --beige: #F2C6A0;
+    --orange: #F28157;
+    ---red: #F25A38;
+    --road-light: #7F8C8D;
+    --road-dark: #2C3E50;
+    --font: 'Roboto', sans-serif;
+    --font_title: 'Permanent Marker', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background: radial-gradient(circle, var(--beige), var(---red), var(---red), var(---red));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 50%;
+    height: 30%;
+    padding: 20px;
+    background: var(--yellow);
+    border-radius: 10px;
+    box-shadow: 10px 10px 1px 1px var(--road-dark);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.container > * {
+    margin: 10px 0;
+}
+
+.container .title {
+    font-family: var(--font_title);
+    color: var(--cyan);
+    letter-spacing: 1px;
+    transform: translateY(-10px);
+}
+
+.container .text {
+    font-family: var(--font);
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--road-dark);
+    transform: translateY(-10px);
+}
+
+.container a {
+    font-family: var(--font);
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--cyan);
+    cursor: pointer;
+}

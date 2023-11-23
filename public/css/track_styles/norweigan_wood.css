@@ -1,0 +1,106 @@
+@import url('./tracks_base.css');
+
+:root {
+    --light-green: #BFB74B;
+    --dark-green: #8C8146;
+    --dark-gray: #594B3F;
+    --light-brown: #A65A3F;
+    --dark-brown: #592C22;
+}
+
+body {
+    background: var(--light-green);
+    color: var(--dark-brown);
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    border-bottom: 2px solid var(--dark-brown);
+}
+
+.back_button a i {
+    color: var(--dark-brown);
+}
+
+.title {
+    color: var(--light-red);
+}
+
+.title::before {
+    content: 'Norweigan Wood';
+    color: var(--dark-green);
+}
+
+/** MAIN CONTENT **/
+
+.effects,
+.malfunctions {
+    border: 2px solid var(--dark-brown);
+}
+
+li::marker {
+    color: var(--dark-brown);
+}
+
+.malfunction:nth-child(even) {
+    background: #5d6fa649;
+}
+
+::-webkit-scrollbar {
+    background: #5d6fa649;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-brown);
+}
+
+tr:nth-child(odd) {
+    background: #5d6fa649;
+}
+
+#range::-webkit-slider-thumb {
+    background: var(--dark-brown);
+}
+
+#range::-webkit-slider-runnable-track {
+    background: var(--dark-brown);
+}
+
+.bet {
+    border: 1px solid var(--dark-brown);
+}
+
+.stop_btn,
+.home_btn {
+    border: 2px solid var(--dark-brown);
+    color: var(--dark-brown);
+    text-shadow: 5px 5px 1px var(--dark-green);
+}
+
+.home_btn a {
+    color: var(--dark-brown);
+}
+
+/** MODAL STYLES **/
+
+.modal {
+    background: var(--light-green);
+    border: 2px solid var(--dark-brown);
+    box-shadow: 15px 15px 1px 1px var(--dark-brown);
+}
+
+#name_input {
+    border-bottom: 2px solid var(--dark-brown);
+    color: var(--dark-brown);
+}
+
+.write_hall_entry_btn {
+    border: 2px solid var(--dark-brown);
+    color: var(--dark-brown);
+}
+
+.write_hall_entry_btn:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 1px 1px #5d6fa670;
+}

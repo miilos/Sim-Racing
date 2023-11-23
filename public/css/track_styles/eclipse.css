@@ -1,0 +1,106 @@
+@import url('./tracks_base.css');
+
+:root {
+    --dark-red: #A65362;
+    --light-red: #D98292;
+    --brown: #592533;
+    --dark-blue: #191726;
+    --light-blue: #5D6FA6;
+}
+
+body {
+    background: var(--dark-blue);
+    color: var(--light-red);
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    border-bottom: 2px solid var(--light-red);
+}
+
+.back_button a i {
+    color: var(--light-red);
+}
+
+.title {
+    color: var(--light-red);
+}
+
+.title::before {
+    content: 'Eclipse';
+    color: var(--brown);
+}
+
+/** MAIN CONTENT **/
+
+.effects,
+.malfunctions {
+    border: 2px solid var(--light-red);
+}
+
+li::marker {
+    color: var(--brown);
+}
+
+.malfunction:nth-child(even) {
+    background: #5d6fa649;
+}
+
+::-webkit-scrollbar {
+    background: #5d6fa649;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-red);
+}
+
+tr:nth-child(odd) {
+    background: #5d6fa649;
+}
+
+#range::-webkit-slider-thumb {
+    background: var(--dark-red);
+}
+
+#range::-webkit-slider-runnable-track {
+    background: var(--light-red);
+}
+
+.bet {
+    border: 1px solid var(--light-red);
+}
+
+.stop_btn,
+.home_btn {
+    border: 2px solid var(--light-red);
+    color: var(--light-red);
+    text-shadow: 5px 5px 1px var(--brown);
+}
+
+.home_btn a {
+    color: var(--light-red);
+}
+
+/** MODAL STYLES **/
+
+.modal {
+    background: var(--dark-blue);
+    border: 2px solid var(--light-red);
+    box-shadow: 15px 15px 1px 1px var(--light-red);
+}
+
+#name_input {
+    border-bottom: 2px solid var(--light-red);
+    color: var(--light-red);
+}
+
+.write_hall_entry_btn {
+    border: 2px solid var(--light-red);
+    color: var(--light-red);
+}
+
+.write_hall_entry_btn:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 1px 1px #5d6fa670;
+}

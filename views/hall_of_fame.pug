@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{title} | Sim Racing
+        link(rel="stylesheet" href="./css/hall_of_fame_style.css")
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+    body 
+        .back_button 
+            a(href='/'): i.fas.fa-arrow-left 
+        
+        // MAIN CONTENT
+        .content_container 
+            .title_container 
+                h1.title.title_big Hall 
+                h1.title.title_small Of 
+                h1.title.title_big.title_last Fame 
+
+            .entries_container 
+                each entry in entries
+                    .entry 
+                        h2.name= entry.name 
+                        h3.message= `${entry.message} (${entry.date})`
+                        .info 
+                            p
+                                strong Vehicle: 
+                                span= entry.vehicle 
+                            p 
+                                strong Track: 
+                                span= entry.track

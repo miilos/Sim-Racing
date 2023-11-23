@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{title} | Sim Racing
+        link(rel="stylesheet" href="./css/head_2_head_style.css")
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+    body 
+        // MAIN TITLE
+        .title_container
+            .back_button 
+                a(href="/"): i.fas.fa-arrow-left
+            h1.title Head 2 Head 
+
+        // MAIN CONTENT
+        .content_container
+            .player_container 
+                h2.p_name Player 1
+                .track
+                    .icon(id='p1'): i.fas.fa-car-side 
+                    .lane_container 
+                    .road_under
+            .player_container 
+                h2.p_name Player 2
+                .track
+                    .icon(id='p2'): i.fas.fa-car-side 
+                    .lane_container 
+                    .road_under
+
+        .modal 
+            h1.modal_title
+            .btn_container
+                button.btn(id='home_btn'): a(href="/") Home 
+                button.btn(id='play_again_btn') Play again 
+
+        script(src="./util/head2head.js")  

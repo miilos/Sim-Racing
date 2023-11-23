@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/css/select_track_style.css")
+        script(src="https://kit.fontawesome.com/cf7f18f3e6.js" crossorigin="anonymous")
+        title #{title} | Sim Racing
+    body 
+        // TITLE
+
+        .title_container
+            .back_button 
+                a(href="/race"): i.fas.fa-arrow-left
+            h1.title Start race!
+        
+        // MAIN CONTENT
+
+        .content_container 
+            h2.subtitle Select track: 
+
+            .tracks_container 
+                each track in tracks
+                    .track(id=`${track.cssId}`)
+                        .track_left
+                            h1.track_name #{track.name}
+                            img.track_shape(src=`${track.shapeImgPath}` alt='track')
+                        .track_right
+                            table.track_data
+                                if track.effects !== 0
+                                    tr 
+                                        td Effects: 
+                                        td= `+${track.effects}% malfunction chance`
+                                tr
+                                    td Length: 
+                                    td= `${track.length} m`
+                                if track.doublePoints
+                                    tr 
+                                        td Double points
+        button.start_btn
+            p Start race
+
+    script(src="./util/pickTrack.js") 

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --cyan: #038C8C;
+    --yellow: #F2B138;
+    --beige: #F2C6A0;
+    --orange: #F28157;
+    ---red: #F25A38;
+    --road-light: #7F8C8D;
+    --road-dark: #2C3E50;
+    --font: 'Roboto', sans-serif;
+    --font_title: 'Permanent Marker', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background: radial-gradient(circle, var(--beige), var(---red), var(---red), var(---red));
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    width: 50%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.back_button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_button a i {
+    color: var(--yellow);
+    font-size: 1.5em;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+.back_button a i:hover {
+    transform: translateY(5px);
+}
+
+.title {
+    width: 100%;
+    font-family: var(--font_title);
+    font-size: 3em;
+    color: var(--yellow);
+    padding-left: 30px;
+    position: relative;
+}
+
+.title::before {
+    content: 'Add vehicle';
+    width: 100%;
+    color: var(--road-dark);
+    font-size: 1em;
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    z-index: -1;
+}
+
+/** MAIN CONTENT CONTAINER **/
+
+.content_container {
+    width: 100%;
+    padding: 20px;
+}
+
+/** SUBTITLE **/
+
+.subtitle {
+    font-size: 1.3em;
+    font-family: var(--font);
+    font-weight: 900;
+    color: var(--cyan);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/** MAIN CONTENT **/
+
+.main_content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/** NEW ITEM FORM **/
+
+.new_vehicle_input {
+    width: 35%;
+    height: 70vh;
+    padding: 30px 20px;
+    background: var(--yellow);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 15px 15px 1px 1px var(--road-dark);
+    position: relative;
+}
+
+.new_vehicle_input .subtitle,
+.new_vehicle_input input,
+.new_vehicle_input select,
+.new_vehicle_input .extra_info {
+    margin-bottom: 10px;
+}
+
+.new_vehicle_input .subtitle {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.new_vehicle_input .subtitle::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--cyan);
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+.new_vehicle_input label {
+    margin-bottom: 5px;
+}
+
+.extra_info_container {
+    margin-top: 30px;
+}
+
+.new_vehicle_input label,
+.new_vehicle_input .extra_info {
+    font-family: var(--font);
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 2px;
+}
+
+.new_vehicle_input #name_input {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid var(--cyan);
+    background: transparent;
+    font-family: var(--font);
+    font-size: 0.9em;
+    font-weight: 900;
+    color: var(--road-dark);
+    padding-left: 5px;
+}
+
+.new_vehicle_input #name_input:focus {
+    outline: none;
+}
+
+.new_vehicle_input #type_input {
+    width: 50%;
+    height: 30px;
+    border: 1px solid var(--cyan);
+    border-radius: 10px;
+    background: var(--cyan);
+    font-family: var(--font);
+    font-weight: 900;
+    font-size: 0.9em;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    padding-left: 10px;
+}
+
+.new_vehicle_input #type_input:focus {
+    outline: none;
+}
+
+.new_vehicle_input button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    background: var(--cyan);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.new_vehicle_input button .btn_text {
+    font-family: var(--font_title);
+    font-size: 1.3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: var(--yellow);
+    position: relative;
+}
+
+.new_vehicle_input button:hover {
+    box-shadow: 5px 5px 1px 1px var(--road-dark);
+    transform: translateY(-5px);
+}

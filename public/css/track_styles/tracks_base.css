@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --font: 'Roboto', sans-serif;
+    --font_title: 'Permanent Marker', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font);
+    letter-spacing: 1px;
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    width: 50%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back_button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_button a i {
+    font-size: 1.5em;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+.back_button a i:hover {
+    transform: translateY(5px);
+}
+
+.title {
+    font-family: var(--font_title);
+    font-size: 3em;
+    padding-left: 30px;
+}
+
+.title::before {
+    font-size: 1em;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    z-index: -1;
+}
+
+/** MAIN CONTENT **/
+
+.content_container {
+    height: 85vh;
+    padding: 20px;
+    display: flex;
+    position: relative;
+}
+
+.right {
+    height: 100%;
+    width: 30vw;
+    padding: 0 20px;
+}
+
+.effects {
+    padding: 20px 40px;
+}
+
+.effects,
+.malfunctions {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+li::marker {
+    font-size: 1.2em;
+}
+
+.malfunctions {
+    height: 30vh;
+    margin-top: 50px;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.malfunction {
+   padding: 5px 40px;
+   width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 0 15px 15px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0 15px 15px 0;
+}
+
+.standings {
+    width: 60vw;
+    margin-right: 5vw;
+    border-collapse: collapse;
+    padding: 5px 10px;
+}
+
+tr:first-child td:first-child {
+    border-radius: 15px 0 0 0;
+}
+
+tr:first-child td:last-child {
+    border-radius: 0 15px 0 0;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 15px;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 15px 0;
+}
+
+tr {
+    height: 40px;
+    cursor: pointer;
+}
+
+td {
+    text-align: center;
+}
+
+td:first-child,
+td:last-child {
+    padding: 0 20px;
+}
+
+#range {
+    -webkit-appearance: none;
+    width: 200px;
+    background: transparent;
+}
+
+#range:focus {
+    outline: none;
+}
+
+#range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-top: -6px;
+}
+
+#range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+}
+
+td:first-child,
+td:nth-child(3) {
+    font-family: var(--font_title);
+    font-size: 1.3em;
+}
+
+.stop_btn {
+    background: none;
+    padding: 15px 20px;
+    border-radius: 35px;
+    position: absolute;
+    bottom: 12%;
+    right: 5%;
+    font-family: var(--font_title);
+    font-size: 1.2em;
+    font-weight: 900;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stop_btn:hover,
+.home_btn:hover {
+    background: #5d6fa649;
+}
+
+.finished {
+    background: #ffffff98;
+}
+
+.finished tr:nth-child(4) {
+    font-family: var(--font_title);
+}
+
+.home_btn {
+    visibility: hidden;
+    background: none;
+    padding: 15px 20px;
+    border-radius: 35px;
+    position: absolute;
+    bottom: 12%;
+    right: 17%;
+    font-family: var(--font_title);
+    font-size: 1.2em;
+    font-weight: 900;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home_btn a {
+    text-decoration: none;
+}
+
+/** MODAL STYLES **/
+
+.modal {
+    width: 30vw;
+    height: 70vh;
+    padding: 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal_title {
+    font-family: var(--font_title);
+    font-size: 2.5em;
+}
+
+#name_input {
+    margin-top: 40px;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+#name_input:focus {
+    outline: none;
+}
+
+.write_hall_entry_btn {
+    background: none;
+    position: relative;
+    top: 55%;
+    right: -25%;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-family: var(--font_title);
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    cursor: pointer;
+}

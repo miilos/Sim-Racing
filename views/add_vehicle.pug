@@ -1,0 +1,60 @@
+doctype html 
+html(lang='en')
+
+head 
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='./css/add_vehicle_menu.css')
+    <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+    title #{title} | Sim racing
+
+body 
+    // MAIN TITLE
+    .title_container 
+        .back_button 
+            a(href='/garage'): i(class='fas fa-arrow-left')
+        h1.title Add vehicle
+
+    // MAIN CONTENT
+    .content_container 
+
+        //NEW ITEM FORM
+        .main_content 
+            form(action='/vehicles' method='post' class='new_vehicle_input')
+                h3.subtitle Enter new vehicle:
+
+                label(for='name_input') Name: 
+                input(type='text' name='name' id='name_input' autocomplete='off')
+
+                label(for='type_input') Type:
+                select(name='vehicleType' id='type_input')
+                    option(value='n/a') -- Select a type --
+                    option(value='sports_car') Car (sports)
+                    option(value='terrain_car') Car (terrain)
+                    option(value='cross_bike') Bike (cross)
+                    option(value='sports_bike') Bike (Sport)
+                    option(value='truck') Truck
+
+                .extra_info_container 
+                    p(class='extra_info' id='speedInfo') Max speed: 
+                    p(class='extra_info' id='malfunctionChanceInfo') Malfunction chance:
+
+                button(type='submit')
+                    p.btn_text Create
+
+    script. 
+        const propertiesMap = new Map();
+        propertiesMap.set('sports_car', { maxSpeed: 140, malfunctionChance: 12 });
+        propertiesMap.set('terrain_car', { maxSpeed: 100, malfunctionChance: 3 });
+        propertiesMap.set('cross_bike', { maxSpeed: 85, malfunctionChance: 3 });
+        propertiesMap.set('sports_bike', { maxSpeed: 130, malfunctionChance: 18 });
+        propertiesMap.set('truck', { maxSpeed: 80, malfunctionChance: 6 });
+
+        const form = document.getElementById('type_input');
+        form.addEventListener('change', el => {
+            const info = propertiesMap.get(form.value);
+
+            document.getElementById('speedInfo').innerText = `Max Speed: ${info.maxSpeed}km/h`;
+            document.getElementById('malfunctionChanceInfo').innerText = `Malfunction chance: ${info.malfunctionChance}%`;
+        });

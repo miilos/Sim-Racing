@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./css/rules_style.css")
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+        title #{title} | Sim Racing
+    body 
+        // MAIN TITLE
+        .title_container 
+            .back_button 
+                a(href='/'): i.fa.fa-arrow-left 
+            h1.title Rules
+        
+        // MAIN CONTENT
+        .content_container 
+            .cards_container 
+                .arrow_left.arrow: i.fas.fa-chevron-left
+                .arrow_right.arrow: i.fas.fa-chevron-right
+                .card.side_card.card_left 
+                    h2.card_title Malfunctions 
+                    .text_container 
+                        p During a race, every vehicle has a chance of malfunctioning. In that case, it takes a small time-out from the race. The chances of a malfunction are:
+                        ul 
+                            li Sports cars: 12%
+                            li Terrain cars: 3%
+                            li Sports bikes: 18%
+                            li Cross bikes: 3%
+                            li Trucks: 6%
+                
+                .card.front_card 
+                    h2.card_title Types 
+                    .text_container 
+                        p The main thing to remember here is the types of vehicles you'll find:
+                        ul
+                            li Cars (sports and terrain cars)
+                            li Bikes (sports and cross bikes)
+                            li Trucks
+
+                .card.side_card.card_right 
+                    h2.card_title The race 
+                    .text_container
+                        p Once you select all vehicles that'll participate, you can start a race. Once a race is finished, you can check the standings for all vehicles, or a certain type of vehicle.
+                        a(href='/') Got it!
+
+    script(src="./util/rotateRuleCards.js") 

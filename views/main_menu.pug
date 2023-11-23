@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title #{title} | Sim Racing
+        link(rel='stylesheet' href='/css/main_menu.css')
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+
+    body
+        // TITLE
+        .title_container 
+            h1.title Sim 
+            h1.title#title_1 Racing 
+
+        // MAIN MENU
+        .menu_container 
+            .menu_item
+                a(href='/startRace'): p.menu_item_text Start race
+                .icon_container: ion-icon(name='flag')
+            .menu_item
+                a(href='/h2h'): p.menu_item_text Head 2 Head
+                .icon_container: ion-icon(name='flash')
+            .menu_item
+                a(href='/garage'): p.menu_item_text Garage
+                .icon_container: ion-icon(name='browsers')
+            .menu_item
+                a(href='/search'): p.menu_item_text Search
+                .icon_container: ion-icon(name='search')
+            .menu_item
+                a(href='/leaderboards'): p.menu_item_text Leaderboards
+                .icon_container: ion-icon(name='trophy')
+            .menu_item 
+                a(href='/hall_of_fame'): p.menu_item_text Hall Of Fame 
+                .icon_container: i.fa.fa-solid.fa-book
+            .menu_item 
+                a(href='rules'): p.menu_item_text Rules 
+                .icon_container: ion-icon(name='document')
+
+        // ROAD
+        .road_container 
+            .road 
+                .lane_container
+            .road_under
+
+        // IONICONS SCRIPTS
+        script(type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js')
+        script(type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js')

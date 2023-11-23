@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="./css/leaderboard_style.css")
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+        title #{title} | Sim Racing
+    body 
+        // MAIN TITLE
+
+        .title_container
+            .back_button
+                a(href='/'): i(class='fas fa-arrow-left')
+            h1.title Leaderboards
+
+        // MAIN CONTENT
+
+        .content_container 
+            .leaderboard 
+                // SELECTORS FOR WHICH LEADERBOARD WILL BE DISPLAYED
+
+                .selector_container 
+                    .board_selector.active: p.selector_icon.selector_text All 
+                    .board_selector: i(class='fas fa-motorcycle selector_icon')
+                    .board_selector: i(class='fas fa-car-side selector_icon')
+                    .board_selector: i(class='fas fa-truck-monster selector_icon')
+
+                // ACTUAL LEADERBOARD
+
+                .board 
+                    table.content_table
+
+        script(src='./util/fillLeaderboard.js')

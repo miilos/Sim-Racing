@@ -1,0 +1,23 @@
+doctype html
+html 
+    head 
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet' href='./css/garage_style.css')
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+        title #{title} | Sim Racing
+    
+    body 
+        // MAIN TITLE
+
+        .title_container 
+            .back_button
+                a(href='/'): i(class='fas fa-arrow-left')
+            h1.title= title
+
+        // MAIN CONTENT
+
+        block cards
+
+        script(src='./util/deleteCard.js') 

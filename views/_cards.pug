@@ -1,0 +1,59 @@
+extends garage 
+
+block cards 
+    .content_container 
+        //CARDS
+        .cards_container
+
+            each vehicle in vehicles
+                if vehicle.special
+                    .card.special_card
+                        .top_container 
+                            h3.name= vehicle.name
+                            i(class='fas fa-trash trash_icon')
+                            .icon_container 
+                                if vehicle.vehicleType === 'sports_car' || vehicle.vehicleType === 'terrain_car'
+                                    i(class="fa-solid fa-car")
+                                else if vehicle.vehicleType === 'cross_bike' || vehicle.vehicleType === 'sports_bike'
+                                    i(class="fa-solid fa-motorcycle")
+                                else 
+                                    i(class="fa-sharp fa-solid fa-truck-monster")
+
+                        table.info_container 
+                            tr 
+                                td Max speed:
+                                td= `${vehicle.maxSpeed} km/h`
+                            tr 
+                                td Distance: 
+                                td= `${vehicle.distance} m`
+                            tr 
+                                td Points: 
+                                td= `${vehicle.points} pts`
+                else
+                    .card
+                        .top_container 
+                            h3.name= vehicle.name
+                            i(class='fas fa-trash trash_icon')
+                            .icon_container 
+                                if vehicle.vehicleType === 'sports_car' || vehicle.vehicleType === 'terrain_car'
+                                    i(class="fa-solid fa-car")
+                                else if vehicle.vehicleType === 'cross_bike' || vehicle.vehicleType === 'sports_bike'
+                                    i(class="fa-solid fa-motorcycle")
+                                else 
+                                    i(class="fa-sharp fa-solid fa-truck-monster")
+
+                        table.info_container 
+                            tr 
+                                td Max speed:
+                                td= `${vehicle.maxSpeed} km/h`
+                            tr 
+                                td Distance: 
+                                td= `${vehicle.distance} m`
+                            tr 
+                                td Points: 
+                                td= `${vehicle.points} pts`
+
+            div(class='card' id='add_vehicle_card')
+                .add_icon_container 
+                    a(href='/add_vehicle'): i(class='fas fa-plus')
+                h3.add_text Add new...

@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        - const src = race.track === 'Octopus\'s garden' ? 'octopus_garden' : race.track.toLowerCase().split(' ').join('_') 
+
+        link(rel="stylesheet", href=`./css/track_styles/${src}.css`)
+        <script src="https://kit.fontawesome.com/dfb5f0fb11.js" crossorigin="anonymous"></script>
+        title #{title} | Sim Racing
+    body 
+        // TITLE
+
+        .title_container 
+            .back_button 
+                a(href='/startRace')
+                    i.fas.fa-arrow-left
+            h1.title= `${race.track}`
+
+        // MAIN CONTENT
+        .content_container 
+            // LEFT SODE OF THE SCREEN
+            table.standings 
+                - for(let i = 0; i < vehicles.length; i++)
+                    tr 
+                        td= `${i+1}.`
+
+                        if vehicles[i].type === 'sports_car' || vehicles[i].type === 'terrain_car'
+                            td: i(class='fas fa-car-side')
+                        else if vehicles[i].type === 'cross_bike' || vehicles[i].type === 'rally_bike'
+                            td: i(class='fas fa-motorcycle')
+                        else 
+                            td: i(class='fas fa-truck-monster') 
+                        
+                        td= `${vehicles[i].name}`
+                        td: input(type="range", name="", id="track" value="0")
+                        td= '0m'
+                        td= '0pts'
+            
+            // RIGHT SIDE OF THE SCREEN
+            .right
+                .effects 
+                    ul 
+                        li= `${race.length}m`
+                        if(race.effect !== 1)
+                            li= `+${race.effect}% malfunction chance`
+                        if(race.doublePoints)
+                            li= 'Double Points'
+                .malfunctions 
+                    p.malfunction Nothing yet!
+
+        button.stop_btn Stop race
+        button.home_btn
+            a(href='/') Home
+
+        .modal 
+            h1.modal_title Congrats! 
+            p.modal_subtitle You guessed the winner! Enter a name for the hall of fame and a special award:  
+            input(type="text", name="", id="name_input", placeholder="Enter your name...")
+            button.write_hall_entry_btn Done
+        
+    script(src="./util/race.js")

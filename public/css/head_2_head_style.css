@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --cyan: #038C8C;
+    --yellow: #F2B138;
+    --beige: #F2C6A0;
+    --orange: #F28157;
+    ---red: #F25A38;
+    --road-light: #7F8C8D;
+    --road-dark: #2C3E50;
+    --font: 'Roboto', sans-serif;
+    --font_title: 'Permanent Marker', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, var(--beige), var(---red), var(---red), var(---red));
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    width: 50%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.back_button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_button a i {
+    color: var(--yellow);
+    font-size: 1.5em;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+.back_button a i:hover {
+    transform: translateY(5px);
+}
+
+.title,
+.p_name {
+    font-family: var(--font_title);
+    font-size: 3em;
+    color: var(--yellow);
+    padding-left: 30px;
+}
+
+.title::before {
+    content: 'Head 2 Head';
+    color: var(--road-dark);
+    font-size: 1em;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    z-index: -1;
+}
+
+/** MAIN CONTENT **/
+
+.content_container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.player_container {
+    width: 100%;
+    height: 20vh;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    perspective: 300px;
+}
+
+.p_name {
+    font-size: 2.2em;
+    text-shadow: 7px 7px 1px var(--road-dark);
+}
+
+.track {
+    width: 700px;
+    height: 10vh;
+    background: var(--road-light);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    perspective: 300px;
+    transform-origin: top;
+    transform: translate(-50%, -50%) rotateX(25deg);
+}
+
+.icon {
+    transform: rotateX(-25deg);
+    color: var(--yellow);
+    text-shadow: 5px 3px 1px var(--road-dark);
+    position: relative;
+}
+
+.icon i {
+    font-size: 2.5em;
+}
+
+.lane_container {
+    width: 700px;
+    height: 15%;
+    background: linear-gradient(90deg, #fff 0%, #fff, 70%, var(--road-light) 70%, var(--road-light) 100%);
+    background-size: 20%;
+    margin-top: -14px;
+}
+
+.road_under {
+    width: 100%;
+    height: 25%;
+    background: var(--road-dark);
+    margin-top: 4%;
+    position: relative;
+    transform-origin: top;
+    transform: rotateX(-35deg);
+    perspective: 300px;
+}
+
+.road_under::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(var(--road-dark), transparent);
+    position: absolute;
+    top: 100%;
+    transform-origin: top;
+    transform: rotateX(35deg);
+    opacity: 0.7;
+}
+
+.modal {
+    width: 30vw;
+    height: 60vh;
+    background: var(--yellow);
+    border-radius: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 15px 15px 1px 1px var(--road-dark);
+}
+
+.modal_title {
+    font-family: var(--font_title);
+    font-size: 2.5em;
+    color: var(--cyan);
+    letter-spacing: 1px;
+}
+
+.btn_container {
+    margin-top: 60%;
+    margin-left: 40%;
+}
+
+.btn {
+    padding: 12px 17px;
+    border: none;
+    border-radius: 25px;
+    background: var(--cyan);
+    font-family: var(--font_title);
+    font-size: 1.1em;
+    color: var(--yellow);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 5px 5px 1px 1px var(--road-dark);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+#home_btn a {
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+#home_btn {
+    margin-right: 10px;
+}

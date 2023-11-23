@@ -1,0 +1,106 @@
+@import url('./tracks_base.css');
+
+:root {
+    --dark-blue: #396873;
+    --light-blue: #99B8BF;
+    --dark-green: #3E5922;
+    --light-green: #A1BF60;
+    --bone: #F2F2F2;
+}
+
+body {
+    background: var(--light-green);
+    color: var(--dark-green);
+}
+
+/** MAIN TITLE **/
+
+.title_container {
+    border-bottom: 2px solid var(--dark-green);
+}
+
+.back_button a i {
+    color: var(--dark-green);
+}
+
+.title {
+    color: var(--bone);
+}
+
+.title::before {
+    content: 'Misty Mountain Hop';
+    color: var(--dark-green);
+}
+
+/** MAIN CONTENT **/
+
+.effects,
+.malfunctions {
+    border: 2px solid var(--dark-green);
+}
+
+li::marker {
+    color: var(--dark-green);
+}
+
+.malfunction:nth-child(even) {
+    background: #5d6fa649;
+}
+
+::-webkit-scrollbar {
+    background: #5d6fa649;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-green);
+}
+
+tr:nth-child(odd) {
+    background: #5d6fa649;
+}
+
+#range::-webkit-slider-thumb {
+    background: var(--bone);
+}
+
+#range::-webkit-slider-runnable-track {
+    background: var(--dark-green);
+}
+
+.bet {
+    border: 1px solid var(--dark-green);
+}
+
+.stop_btn,
+.home_btn {
+    border: 2px solid var(--dark-green);
+    color: var(--bone);
+    text-shadow: 5px 5px 1px var(--dark-green);
+}
+
+.home_btn a {
+    color: var(--bone);
+}
+
+/** MODAL STYLES **/
+
+.modal {
+    background: var(--light-green);
+    border: 2px solid var(--dark-green);
+    box-shadow: 15px 15px 1px 1px var(--dark-green);
+}
+
+#name_input {
+    border-bottom: 2px solid var(--dark-green);
+    color: var(--dark-green);
+}
+
+.write_hall_entry_btn {
+    border: 2px solid var(--dark-green);
+    color: var(--bone);
+}
+
+.write_hall_entry_btn:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 1px 1px #5d6fa670;
+}
